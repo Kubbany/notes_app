@@ -5,25 +5,30 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Text(
-          "Notes",
-          style: TextStyle(
-            fontSize: 28,
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 55,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            "Notes",
+            style: TextStyle(
+              fontSize: 28,
+            ),
           ),
-        ),
-        FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.grey.withOpacity(0.05),
-          elevation: 0,
-          child: const Icon(
-            Icons.search,
-            size: 30,
+          FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Colors.grey.withOpacity(0.05),
+            elevation: 0,
+            child: const Icon(
+              Icons.search,
+              size: 30,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
