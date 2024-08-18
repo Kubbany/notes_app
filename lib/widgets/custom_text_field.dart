@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key, required this.hintText, this.contentPadding = 0});
+  const CustomTextField({super.key, required this.hintText, this.maxLines = 1});
   final String hintText;
-  final double contentPadding;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +13,7 @@ class CustomTextField extends StatelessWidget {
         vertical: 10,
       ),
       child: TextField(
+        maxLines: maxLines,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           border: buildBorder(),
@@ -23,8 +23,6 @@ class CustomTextField extends StatelessWidget {
           hintStyle: const TextStyle(
             color: kPrimaryColor,
           ),
-          contentPadding:
-              EdgeInsets.symmetric(vertical: contentPadding, horizontal: 16),
         ),
       ),
     );
