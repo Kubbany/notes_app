@@ -8,33 +8,36 @@ class CustomButton extends StatelessWidget {
   final bool isLoading;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: kPrimaryColor,
-        minimumSize: Size(MediaQuery.of(context).size.width, 50),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 25),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: kPrimaryColor,
+          minimumSize: Size(MediaQuery.of(context).size.width, 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
-      ),
-      onPressed: onPressed,
-      child: isLoading
-          ? const Center(
-              child: SizedBox(
-                width: 24,
-                height: 24,
-                child: CircularProgressIndicator(
+        onPressed: onPressed,
+        child: isLoading
+            ? const Center(
+                child: SizedBox(
+                  width: 24,
+                  height: 24,
+                  child: CircularProgressIndicator(
+                    color: Colors.black,
+                  ),
+                ),
+              )
+            : const Text(
+                "Add",
+                style: TextStyle(
                   color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
               ),
-            )
-          : const Text(
-              "Add",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
+      ),
     );
   }
 }
